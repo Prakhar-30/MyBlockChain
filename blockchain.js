@@ -1,4 +1,4 @@
-const Block = require("./block");
+const Block = require("./Block");
 const cryptoHash = require("./crypto-hash");
 
 class Blockchain {
@@ -43,10 +43,10 @@ class Blockchain {
   }
 }
 
-const blockchain = new Blockchain();
-blockchain.addBlock({ data: "Block1" });
-blockchain.addBlock({ data: "Block2" });
+// const blockchain = new Blockchain();
+// blockchain.addBlock({ data: "Block1" });
+// blockchain.addBlock({ data: "Block2" });
 
-console.log(blockchain);
+// console.log(blockchain);
 
 module.exports = Blockchain;

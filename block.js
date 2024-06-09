@@ -19,7 +19,7 @@ class Block {
   static mineBlock({ prevBlock, data }) {
     let hash, timestamp;
     const prevHash = prevBlock.hash;
-    let difficulty=prevBlock;
+    let { difficulty } = prevBlock;
 
     let nonce = 0;
     do {
@@ -53,12 +53,7 @@ class Block {
 }
 
 
-const block1=new Block({
-    hash:'0xacb',
-    timestamp:'9/6/24',
-    prevHash:'0xc12',
-    data:'hello',
-});
+
 
 // const genesisBlock = Block.genesis();
 // console.log(genesisBlock);
