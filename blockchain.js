@@ -21,9 +21,11 @@ class Blockchain {
     for (let i = 1; i < chain.length; i++) {
       const { timestamp, prevHash, hash,nonce,difficulty, data } = chain[i];
       const realLastHash = chain[i - 1].hash;
+      const lastDifficulty =chain[i-1].difficulty;
       if (prevHash !== realLastHash) return false;
       const validatedHash = cryptoHash(timestamp, prevHash,nonce,difficulty,data);
       if (hash !== validatedHash) return false;
+      if(Math.abs(lastDifficulty-difficulty>1))return false;
     }
     return true;
   }
@@ -47,4 +49,4 @@ blockchain.addBlock({ data: "Block2" });
 
 console.log(blockchain);
 
-module.exports = blockchain;
+module.exports = Blockchain;
